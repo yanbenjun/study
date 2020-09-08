@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fileParse SYSTEM "fileParse.dtd">
+<fileParse>
+	<parseSystem name="test">
+		<toParseFile name="test">
+			<toParseTemplate index="0" priority="0">
+				<columnHead titleName="序号" fieldName="index" required="true"/>
+				<columnHead titleName="关键字" fieldName="key" required="true"/>
+				<columnHead titleName="名称" fieldName="name"/>
+				<columnHead titleName="经度" fieldName="lng" type="integer" horizontalMerger="integeradd"/>
+				<columnHead titleName="纬度" fieldName="lat"/>
+			</toParseTemplate>
+			<toParseTemplate index="1">
+				<columnHead titleName="" fieldName="">
+				</columnHead>
+			</toParseTemplate>
+		</toParseFile>
+	</parseSystem>
+</fileParse>

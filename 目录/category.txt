@@ -1,0 +1,17 @@
+
+蓝凌：
+elasticsearch、全文搜索
+组件式设计
+linux、相关linux远程链接工具使用、日志对于bug解决的意义
+js（require、use）
+
+中软国际：
+设计模式（模板，工厂，单例）
+gis、立体几何、任务式编程
+了解业务、熟练业务、从业务中寻找规律、帮助设计系统（优化系统）
+
+maven、pom
+1、Excel解析（xlsx、xls、csv）。
+2、xml解析、json解析、资源文件解析。
+3、文件解析系统。（技术：xml、xml schema、注解
+4、mybatis

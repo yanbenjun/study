@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.yanbenjun.db.dao.IDbTableDao">
+	
+	<update id="executeSql" parameterType="java.lang.String">
+		${sql}
+	</update>
+	
+    <insert id="addAll" parameterType="java.util.List">
+	    INSERT INTO tbl_db_table VALUES
+	    <foreach collection="list" item="item" separator=",">
+	        (
+	          #{item.id},
+	          #{item.tableName},
+	          #{item.name},
+	          #{item.comment}
+	        )
+	    </foreach>
+    </insert>
+    
+    <resultMap type="com.yanbenjun.db.DbTable" id="tableInfoMap">
+        <result column="id" property="id" />
+        <result column="tableName" property="tableName" />
+        <result column="name" property="name" />
+        <result column="comment" property="comment" />
+        <collection property="dbFields" ofType="com.yanbenjun.db.DbField">
+            <result column="id1" property="id" />
+            <result column="originName" property="originName" />
+            <result column="sqlType" property="sqlType" />
+            <result column="length" property="length" />
+            <result column="notNull" property="notNull" />
+            <result column="primaryKey" property="primaryKey" />
+            <result column="key" property="key" />
+            <result column="comment1" property="comment" />
+            <result column="orderInTable" property="orderInTable" />
+        </collection>
+    </resultMap>
+    
+    <select id="queryTableInfoById" resultMap="tableInfoMap">
+        SELECT
+		    t.*, 
+		    f.id id1,
+		    f.originName,
+		    f.sqlType,
+		    f.length,
+		    f.notNull,
+		    f.primaryKey,
+		    f.`KEY`,
+		    f.`COMMENT` comment1,
+		    f.orderInTable
+		FROM
+		    tbl_db_table t
+		LEFT JOIN tbl_db_field f ON t.id = f.tableId
+		WHERE
+		    t.id = #{tableId} 
+		ORDER BY
+		    f.orderInTable
+    </select>
+</mapper>

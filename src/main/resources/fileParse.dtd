@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT fileParse (parseSystem*)>
+<!ELEMENT parseSystem (toParseFile*)>
+<!ELEMENT toParseFile (toParseTemplate+)>
+<!ELEMENT toParseTemplate (columnHead*)>
+<!ELEMENT columnHead (#PCDATA)>
+<!ELEMENT convertor (#PCDATA)>
+
+<!ATTLIST parseSystem name ID #REQUIRED>
+<!ATTLIST toParseFile name CDATA #REQUIRED>
+<!ATTLIST toParseTemplate index CDATA #REQUIRED>
+<!ATTLIST toParseTemplate priority CDATA #IMPLIED>
+<!ATTLIST columnHead titleName CDATA #REQUIRED>
+<!ATTLIST columnHead fieldName CDATA #REQUIRED>
+<!ATTLIST columnHead required (true|false) #IMPLIED>
+<!ATTLIST columnHead type (integer|CDATA) #IMPLIED>
+<!ATTLIST columnHead horizontalMerger (integeradd|CDATA) #IMPLIED>
+
+<!ENTITY copyright SYSTEM "http://www.baidu.com">

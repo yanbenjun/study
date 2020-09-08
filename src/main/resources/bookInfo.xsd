@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.cnblogs.yanbenjun.com" xmlns:xns="http://www.cnblogs.yanbenjun.com">
+	<xs:element name="bookInfo" >
+		<xs:complexType>
+		    <xs:choice>
+		    <xs:element ref="xns:test"></xs:element>
+		    </xs:choice>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="test" type="xs:string"></xs:element>
+</xs:schema>

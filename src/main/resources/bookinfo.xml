@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookInfo xmlns="http://www.cnblogs.yanbenjun.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.cnblogs.yanbenjun.com bookInfo.xsd">
+	<book name="JAVA1"></book>
+	<book name="JAVA2"></book>
+	<book name="JAVA3"></book>
+	<book name="JAVA4"></book>
+	<book name="JAVA5"></book>
+	<book name="JAVA6"></book>
+	<book name="JAVA7"></book>
+</bookInfo>

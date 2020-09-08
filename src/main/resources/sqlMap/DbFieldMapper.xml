@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.yanbenjun.db.dao.IDbFieldDao">
+
+	<sql id="tablename">tbl_db_field</sql>
+
+	<sql id="Base_Column_List">
+		id,
+		originName,
+		sqlType,
+		length,
+		notNull,
+		primaryKey,
+		key,
+		comment,
+		tableId,
+		dataSourceId
+	</sql>
+
+	<resultMap id="BaseResultMap" type="com.yanbenjun.db.DbField">
+		<result column="id" property="id" javaType="java.lang.Long" />
+		<result column="originName" property="originName" javaType="java.lang.String" />
+		<result column="sqlType" property="sqlType" javaType="java.lang.Integer" />
+		<result column="length" property="length" javaType="java.lang.Integer" />
+		<result column="notNull" property="notNull" javaType="java.lang.Boolean" />
+		<result column="primaryKey" property="primaryKey" javaType="java.lang.Boolean" />
+		<result column="key" property="key" javaType="java.lang.Boolean" />
+		<result column="comment" property="comment" javaType="java.lang.String" />
+		<result column="tableId" property="tableId" javaType="java.lang.Long" />
+		<result column="dataSourceId" property="dataSourceId" javaType="java.lang.Long" />
+	</resultMap>
+
+
+
+	<insert id="addFields" parameterType="java.util.List">
+		insert into
+		<include refid="tablename" />
+		(
+		id,
+        originName,
+        sqlType,
+        length,
+        notNull,
+        primaryKey,
+        `key`,
+        `comment`,
+        orderInTable,
+        tableId,
+        dataSourceId
+		)
+		values
+		<foreach collection="list" separator=","
+			item="item">
+			(
+			#{item.id},
+			#{item.originName},
+			#{item.sqlType},
+			#{item.length},
+			#{item.notNull},
+			#{item.primaryKey},
+			#{item.key},
+			#{item.comment},
+			#{item.orderInTable},
+			#{item.dbTable.id},
+			#{item.fieldDataSource.id}
+			)
+		</foreach>
+	</insert>
+</mapper>
