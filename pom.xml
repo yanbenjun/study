@@ -17,7 +17,7 @@
 	</parent>
 
 	<properties>
-		<org.mybatis_mybatis_version>3.4.2</org.mybatis_mybatis_version>
+		<org.mybatis_mybatis_version>3.5.6</org.mybatis_mybatis_version>
 		<mysql_mysql-connector-java_version>5.1.44</mysql_mysql-connector-java_version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
